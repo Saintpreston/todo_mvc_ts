@@ -15,8 +15,8 @@ export class TodoController {
 	view!: TodoView;
 	private viewContructor!: Class<TodoView>;
 
-	constructor(model: Class<TodoModel>, viewConstructor: Class<TodoView>) {
-		this.model = create(model);
+	constructor(modelConstructor: Class<TodoModel>, viewConstructor: Class<TodoView>) {
+		this.model = create(modelConstructor);
 		this.model.bindTodoListChanged(this.onTodoListChanged);
 		this.viewContructor = viewConstructor;
 	}
